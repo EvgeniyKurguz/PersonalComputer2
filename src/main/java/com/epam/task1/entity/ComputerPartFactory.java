@@ -49,7 +49,7 @@ public class ComputerPartFactory {
         int id = 1;
         Monitor.ScreenSize screenSize = Monitor.ScreenSize.values()[rnd.nextInt(Monitor.ScreenSize.values().length)];
         ComputerPart.Country country = ComputerPart.Country.values()[rnd.nextInt(ComputerPart.Country.values().length)];
-        BigDecimal price = BigDecimal.valueOf(rnd.nextInt(110));
+        BigDecimal price = BigDecimal.valueOf(rnd.nextInt(310));
         String brand = "BENQ";
         Periferia.PeriferiaCount periferiaCount = Periferia.PeriferiaCount.values()[rnd.nextInt(Periferia.PeriferiaCount.values().length)];
 
@@ -62,7 +62,7 @@ public class ComputerPartFactory {
     private Drive driveFactory() {
         int id = 2;
         ComputerPart.Country country = ComputerPart.Country.values()[rnd.nextInt(ComputerPart.Country.values().length)];
-        BigDecimal price = BigDecimal.valueOf(rnd.nextInt(110));
+        BigDecimal price = BigDecimal.valueOf(rnd.nextInt(185));
         String maker = "Samsung";
         Component.Type type = Component.Type.values()[rnd.nextInt(Component.Type.values().length)];
         Drive.Input interfaces = Drive.Input.values()[rnd.nextInt(Drive.Input.values().length)];
@@ -76,7 +76,7 @@ public class ComputerPartFactory {
     private CPU cpuFactory() {
         int id = 3;
         ComputerPart.Country country = ComputerPart.Country.values()[rnd.nextInt(ComputerPart.Country.values().length)];
-        BigDecimal price = BigDecimal.valueOf(rnd.nextInt(110));
+        BigDecimal price = BigDecimal.valueOf(rnd.nextInt(510));
         String maker = "AMD FX8200";
         Component.Type type = Component.Type.values()[rnd.nextInt(Component.Type.values().length)];
         CPU.Type cpu = CPU.Type.values()[rnd.nextInt(CPU.Type.values().length)];
@@ -92,7 +92,7 @@ public class ComputerPartFactory {
     private Mouse mouseFactory() {
         int id = 4;
         ComputerPart.Country country = ComputerPart.Country.values()[rnd.nextInt(ComputerPart.Country.values().length)];
-        BigDecimal price = BigDecimal.valueOf(rnd.nextInt(110));
+        BigDecimal price = BigDecimal.valueOf(rnd.nextInt(145));
         String maker = "HP";
         Periferia.PeriferiaCount octavesCount = Periferia.PeriferiaCount.values()[rnd.nextInt(Periferia.PeriferiaCount.values().length)];
         Mouse.TypeMouse typeMouse = Mouse.TypeMouse.values()[rnd.nextInt(Mouse.TypeMouse.values().length)];
@@ -105,7 +105,7 @@ public class ComputerPartFactory {
     private Videocard videocardFactory() {
         int id = 5;
         ComputerPart.Country country = ComputerPart.Country.values()[rnd.nextInt(ComputerPart.Country.values().length)];
-        BigDecimal price = BigDecimal.valueOf(rnd.nextInt(110));
+        BigDecimal price = BigDecimal.valueOf(rnd.nextInt(400));
         String maker = "Radeon HD7990";
         Component.Type type = Component.Type.values()[rnd.nextInt(Component.Type.values().length)];
         Videocard.Input extensionBoard = Videocard.Input.values()[rnd.nextInt(Mouse.TypeMouse.values().length)];
@@ -121,7 +121,7 @@ public class ComputerPartFactory {
     private Keyboard keyboardFactory() {
         int id = 6;
         ComputerPart.Country country = ComputerPart.Country.values()[rnd.nextInt(ComputerPart.Country.values().length)];
-        BigDecimal price = BigDecimal.valueOf(rnd.nextInt(110));
+        BigDecimal price = BigDecimal.valueOf(rnd.nextInt(15));
         String maker = "Hi tech";
         Periferia.PeriferiaCount periferiaCountt = Periferia.PeriferiaCount.values()[rnd.nextInt(Periferia.PeriferiaCount.values().length)];
         Keyboard.TypeKeybord typeKeyboards = Keyboard.TypeKeybord.values()[rnd.nextInt(Keyboard.TypeKeybord.values().length)];

@@ -21,9 +21,11 @@ public class StationaryComputerFactory {
         stationaryComputerClone.setQuantity(10);
 
     }
+
     public StationaryComputer createStationaryComputer() {
         return stationaryComputer;
     }
+
     @Override
     public String toString() {
         return "StationaryComputer=" +

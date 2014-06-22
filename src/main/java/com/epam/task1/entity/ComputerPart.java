@@ -4,10 +4,10 @@ import java.math.*;
 import java.util.Comparator;
 
 public abstract class ComputerPart {
-      private int id;
+    private int id;
     private Country country;
     private BigDecimal price;
-   private static final Comparator<ComputerPart> ID_COMPARATOR = new Comparator<ComputerPart>() {
+    private static final Comparator<ComputerPart> ID_COMPARATOR = new Comparator<ComputerPart>() {
         @Override
         public int compare(ComputerPart o1, ComputerPart o2) {
             return o1.getId() - o2.getId();
@@ -29,7 +29,7 @@ public abstract class ComputerPart {
         this.id = id;
     }
 
-    public ComputerPart( int id, Country country, BigDecimal price, String maker) {
+    public ComputerPart(int id, Country country, BigDecimal price, String maker) {
         this.id = id;
 
         this.country = country;
