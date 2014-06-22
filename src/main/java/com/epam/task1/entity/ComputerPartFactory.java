@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-
 public class ComputerPartFactory {
+
     private final static Random rnd = new Random();
 
-    public List<ComputerPart> createInstruments(int count, ComputerPart.ComputerPartType... ComputerPartType) {
+    public List<ComputerPart> createParts(int count, ComputerPart.ComputerPartType... ComputerPartType) {
 
         List<ComputerPart> computerPartList = new ArrayList<ComputerPart>();
         ComputerPart computerPart;
@@ -46,34 +46,37 @@ public class ComputerPartFactory {
     }
 
     private Monitor monitorFactory() {
+        int id = 1;
         Monitor.ScreenSize screenSize = Monitor.ScreenSize.values()[rnd.nextInt(Monitor.ScreenSize.values().length)];
-        ComputerPart.Material material = ComputerPart.Material.values()[rnd.nextInt(ComputerPart.Material.values().length)];
-        BigDecimal price = BigDecimal.valueOf(rnd.nextInt(100));
+        ComputerPart.Country country = ComputerPart.Country.values()[rnd.nextInt(ComputerPart.Country.values().length)];
+        BigDecimal price = BigDecimal.valueOf(rnd.nextInt(110));
         String brand = "BENQ";
         Periferia.PeriferiaCount periferiaCount = Periferia.PeriferiaCount.values()[rnd.nextInt(Periferia.PeriferiaCount.values().length)];
 
-        Monitor monitor = new Monitor(material, price, brand, periferiaCount, screenSize);
+        Monitor monitor = new Monitor(id, country, price, brand, periferiaCount, screenSize);
 
         return monitor;
 
     }
 
     private Drive driveFactory() {
-        ComputerPart.Material material = ComputerPart.Material.values()[rnd.nextInt(ComputerPart.Material.values().length)];
-        BigDecimal price = BigDecimal.valueOf(rnd.nextInt(40));
+        int id = 2;
+        ComputerPart.Country country = ComputerPart.Country.values()[rnd.nextInt(ComputerPart.Country.values().length)];
+        BigDecimal price = BigDecimal.valueOf(rnd.nextInt(110));
         String maker = "Samsung";
         Component.Type type = Component.Type.values()[rnd.nextInt(Component.Type.values().length)];
-        Drive.Input interfaces = Drive.Input.values()[rnd.nextInt(Drive.Type.values().length)];
+        Drive.Input interfaces = Drive.Input.values()[rnd.nextInt(Drive.Input.values().length)];
 
-        Drive drive = new Drive(material, price, maker, interfaces, type);
+        Drive drive = new Drive(id, country, price, maker, interfaces, type);
 
         return drive;
 
     }
 
     private CPU cpuFactory() {
-        ComputerPart.Material material = ComputerPart.Material.values()[rnd.nextInt(ComputerPart.Material.values().length)];
-        BigDecimal price = BigDecimal.valueOf((90));
+        int id = 3;
+        ComputerPart.Country country = ComputerPart.Country.values()[rnd.nextInt(ComputerPart.Country.values().length)];
+        BigDecimal price = BigDecimal.valueOf(rnd.nextInt(110));
         String maker = "AMD FX8200";
         Component.Type type = Component.Type.values()[rnd.nextInt(Component.Type.values().length)];
         CPU.Type cpu = CPU.Type.values()[rnd.nextInt(CPU.Type.values().length)];
@@ -81,26 +84,28 @@ public class ComputerPartFactory {
         double frequency = 4.2;
         int cacheMemory = 3;
 
-        CPU CPU = new CPU(material, price, maker, quantityCore, frequency, cacheMemory, type);
+        CPU CPU = new CPU(id, country, price, maker, quantityCore, frequency, cacheMemory, type);
 
         return CPU;
     }
 
     private Mouse mouseFactory() {
-        ComputerPart.Material material = ComputerPart.Material.values()[rnd.nextInt(ComputerPart.Material.values().length)];
-        BigDecimal price = BigDecimal.valueOf(1200);
+        int id = 4;
+        ComputerPart.Country country = ComputerPart.Country.values()[rnd.nextInt(ComputerPart.Country.values().length)];
+        BigDecimal price = BigDecimal.valueOf(rnd.nextInt(110));
         String maker = "HP";
         Periferia.PeriferiaCount octavesCount = Periferia.PeriferiaCount.values()[rnd.nextInt(Periferia.PeriferiaCount.values().length)];
         Mouse.TypeMouse typeMouse = Mouse.TypeMouse.values()[rnd.nextInt(Mouse.TypeMouse.values().length)];
 
-        Mouse mouse = new Mouse(material, price, maker, octavesCount, typeMouse);
+        Mouse mouse = new Mouse(id, country, price, maker, octavesCount, typeMouse);
 
         return mouse;
     }
 
     private Videocard videocardFactory() {
-        ComputerPart.Material material = ComputerPart.Material.values()[rnd.nextInt(ComputerPart.Material.values().length)];
-        BigDecimal price = BigDecimal.valueOf(1200);
+        int id = 5;
+        ComputerPart.Country country = ComputerPart.Country.values()[rnd.nextInt(ComputerPart.Country.values().length)];
+        BigDecimal price = BigDecimal.valueOf(rnd.nextInt(110));
         String maker = "Radeon HD7990";
         Component.Type type = Component.Type.values()[rnd.nextInt(Component.Type.values().length)];
         Videocard.Input extensionBoard = Videocard.Input.values()[rnd.nextInt(Mouse.TypeMouse.values().length)];
@@ -108,19 +113,20 @@ public class ComputerPartFactory {
         double versionShader = 5.0;
         int videoMemory = 2;
 
-        Videocard videocard = new Videocard(material, price, maker, extensionBoard, (int) dataBus, versionShader, videoMemory, type);
+        Videocard videocard = new Videocard(id, country, price, maker, extensionBoard, (int) dataBus, versionShader, videoMemory, type);
 
         return videocard;
     }
 
     private Keyboard keyboardFactory() {
-        ComputerPart.Material material = ComputerPart.Material.values()[rnd.nextInt(ComputerPart.Material.values().length)];
-        BigDecimal price = BigDecimal.valueOf(1200);
+        int id = 6;
+        ComputerPart.Country country = ComputerPart.Country.values()[rnd.nextInt(ComputerPart.Country.values().length)];
+        BigDecimal price = BigDecimal.valueOf(rnd.nextInt(110));
         String maker = "Hi tech";
         Periferia.PeriferiaCount periferiaCountt = Periferia.PeriferiaCount.values()[rnd.nextInt(Periferia.PeriferiaCount.values().length)];
         Keyboard.TypeKeybord typeKeyboards = Keyboard.TypeKeybord.values()[rnd.nextInt(Keyboard.TypeKeybord.values().length)];
 
-        Keyboard keyboard = new Keyboard(material, price, maker, periferiaCountt, typeKeyboards);
+        Keyboard keyboard = new Keyboard(id, country, price, maker, periferiaCountt, typeKeyboards);
 
         return keyboard;
     }

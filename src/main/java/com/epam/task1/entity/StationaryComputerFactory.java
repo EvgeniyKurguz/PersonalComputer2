@@ -1,31 +1,34 @@
-package com.epam.task1.entity;/**
- * Created by Евгений on 21.06.2014.
- */
+package com.epam.task1.entity;
+
 public class StationaryComputerFactory {
     private String name;
     private StationaryComputer stationaryComputer = new StationaryComputer();
 
     public StationaryComputerFactory() {
         stationaryComputer
-                .setQuality(10)
-                .setToolsNumber(100);
+                .setQuantity(10);
+
         ComputerPartFactory factory = new ComputerPartFactory();
-        stationaryComputer.establishInstruments(factory.createInstruments(15,
+        stationaryComputer.establishComputerParts(factory.createParts(7,
                 ComputerPart.ComputerPartType.MONITOR,
                 ComputerPart.ComputerPartType.CPU,
                 ComputerPart.ComputerPartType.MOUSE,
+                ComputerPart.ComputerPartType.DRIVE,
+                ComputerPart.ComputerPartType.KEYBOARD,
                 ComputerPart.ComputerPartType.VIDEOCARD));
 
-        StationaryComputer  stationaryComputerClone = stationaryComputer.createClone();
-        stationaryComputerClone.setQuality(10);
-        stationaryComputerClone.setToolsNumber(160);
-    }
+        StationaryComputer stationaryComputerClone = stationaryComputer.createClone();
+        stationaryComputerClone.setQuantity(10);
 
+    }
+    public StationaryComputer createStationaryComputer() {
+        return stationaryComputer;
+    }
     @Override
     public String toString() {
         return "StationaryComputer=" +
                 name + '\'' +
-                stationaryComputer + "\n"+
+                stationaryComputer + "\n" +
                 '}';
     }
 
