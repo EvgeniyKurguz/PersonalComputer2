@@ -1,26 +1,15 @@
 package com.epam.task1.entity;
 
 import java.math.*;
-import java.util.Comparator;
 
-public abstract class ComputerPart {
+public abstract class ComputerPart implements Comparable<ComputerPart> {
+    public static final Comparator PRICE_COMPARATOR = new Comparator();
     private int id;
     private Country country;
     private BigDecimal price;
-    private static final Comparator<ComputerPart> ID_COMPARATOR = new Comparator<ComputerPart>() {
-        @Override
-        public int compare(ComputerPart o1, ComputerPart o2) {
-            return o1.getId() - o2.getId();
-        }
-    };
-
     private String maker;
 
-    public void setCountry(Country country) {
-        this.country = country;
-    }
-
-    public int getId() {
+       public int getId() {
 
         return id;
     }
@@ -37,10 +26,6 @@ public abstract class ComputerPart {
         this.maker = maker;
         this.price = price;
 
-    }
-
-    public static Comparator<ComputerPart> getIdComparator() {
-        return ID_COMPARATOR;
     }
 
     public String getCountry() {
@@ -88,4 +73,13 @@ public abstract class ComputerPart {
         DRIVE,
         KEYBOARD,
     }
+
+    public static class Comparator<C> implements java.util.Comparator<ComputerPart> {
+
+        @Override
+        public int compare(ComputerPart o1, ComputerPart o2) {
+            BigDecimal result = o1.price.subtract(o2.price);
+            return result.intValue();
+        }
+    };
 }

@@ -17,9 +17,9 @@ public class Main {
         LOGGER.info(computerFactory);
         StationaryComputer stationaryComputer = new StationaryComputerFactory()
                 .createStationaryComputer();
-        Collections.sort(stationaryComputer.getComputerParts(), ComputerPart.getIdComparator());
+        Collections.sort(stationaryComputer.getComputerParts(),ComputerPart.PRICE_COMPARATOR);
         LOGGER.info("Sort: " + stationaryComputer);
-        List<ComputerPart> computerParttList = Filtration.searchComputerPartByPriceUpperLimit(stationaryComputer.getComputerParts(), BigDecimal.valueOf(70), BigDecimal.valueOf(60));
+        List<ComputerPart> computerParttList = Filtration.searchComputerPartByPriceLimit(stationaryComputer.getComputerParts(), BigDecimal.valueOf(460), BigDecimal.valueOf(100));
         LOGGER.info("Filtration: " + computerParttList);
 
     }

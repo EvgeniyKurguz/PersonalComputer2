@@ -6,14 +6,15 @@ import java.util.List;
 
 public class Filtration {
 
-    public static List<ComputerPart> searchComputerPartByPriceUpperLimit(List<ComputerPart> originList, BigDecimal upperMax, BigDecimal lowerMin) {
+    public static List<ComputerPart> searchComputerPartByPriceLimit(List<ComputerPart> originList, BigDecimal Max, BigDecimal Min) {
         List<ComputerPart> result = new ArrayList<ComputerPart>();
 
         for (ComputerPart i : originList)
-            if ((i.getPrice().compareTo(upperMax) < 0))
-                if ((0 < i.getPrice().compareTo(lowerMin))) {
+            if ((i.getPrice().compareTo(Max) < 0))
+                if ((i.getPrice().compareTo(Min)) > 0) {
                     result.add(i);
                 }
         return result;
     }
+
 }

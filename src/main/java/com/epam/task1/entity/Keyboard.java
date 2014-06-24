@@ -18,7 +18,7 @@ public class Keyboard extends Periferia {
     @Override
     public String toString() {
         return "Keyboard{" +
-                "id= " + getId() + " " +
+                "id=" + getId() + " " +
                 "Contry= " + getCountry() + " " +
                 "Keyboards=" + typeKeyboards + " " +
                 "Maker=" + getMaker() + " " +
