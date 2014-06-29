@@ -5,7 +5,7 @@
 </head>
 <body>
 <h2>Hello microelectronic world !!!</h2>
-${ComputerPartFactory}
+${StationaryComputer}
 
 <br /><br /><br />
 ${header}
