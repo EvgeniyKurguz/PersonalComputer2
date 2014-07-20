@@ -4,7 +4,7 @@
     <title>Web-Computer</title>
 </head>
 <body>
-<h2>Hello microelectronic world !!!</h2>
+<h2>Hello  world !!!</h2>
 ${StationaryComputer}
 
 <br /><br /><br />

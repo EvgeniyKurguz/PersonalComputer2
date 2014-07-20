@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<personalComputer>
+    <computerPart id="001">
+        <name>CPU</name>
+        <contry>China</contry>
+        <maker>AMD FX8200</maker>
+        <parameters>
+            <quntityCore>8</quntityCore>
+            <frequency>4.2</frequency>
+            <cacheMemory>3</cacheMemory>
+        </parameters>
+        <price>242</price>
+    </computerPart>
+
+    <computerPart id="002">
+        <name>Drive</name>
+        <contry>China</contry>
+        <maker>Samsung</maker>
+        <interfaces>SATA II</interfaces>
+        <price>42</price>
+    </computerPart>
+
+    <computerPart id="003">
+        <name>Keybord</name>
+        <contry>Taibai</contry>
+        <maker>Hi tech</maker>
+        <type>WIRElESS</type>
+        <price>12</price>
+    </computerPart>
+
+    <computerPart id="004">
+        <name>Monitor</name>
+        <contry>Malaysia</contry>
+        <maker>BENQ</maker>
+        <parameters>
+            <sizeScreen>17</sizeScreen>
+        </parameters>
+        <price>300</price>
+    </computerPart>
+
+    <computerPart id="005">
+        <name>Mouse</name>
+        <contry>China</contry>
+        <maker>HP</maker>
+        <typeMouse>optical</typeMouse>
+        <price>11</price>
+    </computerPart>
+
+    <computerPart id="006">
+        <name>Videocard</name>
+        <contry>Malaysia</contry>
+        <maker>Radeon_HD7990</maker>
+        <parameters>
+            <extensionBoard>PCI_E</extensionBoard>
+            <dataBus>256</dataBus>
+            <versionShader>5.0</versionShader>
+            <videoMemory>2</videoMemory>
+        </parameters>
+        <price>342</price>
+    </computerPart>
+
+</personalComputer>
