@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
-<personalComputer>
+<st:personalComputer xmlns:st="http://example.com/personalComputer"
+                     xmlns:xsi="http://www.w3.com/2001/XMLSchema-instance"
+                     xsi:schemaLocation
+
     <computerPart id="001">
         <name>CPU</name>
         <contry>China</contry>
@@ -10,6 +13,7 @@
             <cacheMemory>3</cacheMemory>
         </parameters>
         <price>242</price>
+        <education> </education>
     </computerPart>
 
     <computerPart id="002">
