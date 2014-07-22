@@ -15,9 +15,9 @@
             <xsd:element name="country" type="countryType"/>
             <xsd:element name="maker" type="makerType"/>
             <xsd:element name="parameters" type="parametersType"/>
-            <xsd:element name="price" type="BigDecimal"/>
+            <xsd:element name="price" type="xsd:int"/>
         </xsd:sequence>
-</xsd:complexType>
+    </xsd:complexType>
 
     <xsd:complexType name="parametersType">
         <xsd:sequence>
@@ -28,4 +28,17 @@
         </xsd:sequence>
     </xsd:complexType>
 
-    </xsd:schema>
+    <xsd:complexType name="countryType">
+        <xsd:sequence>
+            <xsd:element name="country" type="xsd:int"/>
+            </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="makerType">
+        <xsd:sequence>
+            <xsd:element name="maker" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+</xsd:schema>
