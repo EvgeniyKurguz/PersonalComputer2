@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <st:personalComputer xmlns:st="http://www.example.com/personalComputer"
                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                     xsi:schemaLocation="http://example.com/personalComputer.xsd ">
+                     xsi:schemaLocation="http://example.com/personalComputer.ssd ">
 
     <computerPart id="001">
         <name>CPU</name>
@@ -13,7 +13,7 @@
             <cacheMemory>3</cacheMemory>
         </parameters>
         <price>242</price>
-       
+
     </computerPart>
 
     <computerPart id="002">

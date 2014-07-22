@@ -30,13 +30,13 @@
 
     <xsd:complexType name="countryType">
         <xsd:sequence>
-            <xsd:element name="country" type="xsd:int"/>
+            <xsd:element name="country" type="countryType"/>
             </xsd:sequence>
     </xsd:complexType>
 
     <xsd:complexType name="makerType">
         <xsd:sequence>
-            <xsd:element name="maker" type="xsd:int"/>
+            <xsd:element name="maker" type="makerType"/>
         </xsd:sequence>
     </xsd:complexType>
 
