@@ -2,7 +2,16 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <xsd:complexType name="MouseType">
         <xsd:sequence>
-            <xsd:element name="typeMouse" type="xsd:string"/>
+            <xsd:element name="typeMouse" type="typeMouse"/>
+
         </xsd:sequence>
     </xsd:complexType>
+
+    <xsd:simpleType name="typeMouse">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="optical"/>
+            <xsd:enumeration value="laser"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
 </xsd:schema>

@@ -7,11 +7,11 @@
         <name>CPU</name>
         <country>CHINA</country>
         <maker>AMD_FX8200</maker>
-        <parameters>
+        <parametersCPU>
             <quntityCore>8</quntityCore>
             <frequency>4.2</frequency>
             <cacheMemory>3</cacheMemory>
-        </parameters>
+        </parametersCPU>
         <price>242</price>
     </computerPart>
 
@@ -21,7 +21,7 @@
         <maker>Samsung</maker>
         <parameterDrive>
             <interfaces>SATA_II</interfaces>
-         </parameterDrive>
+        </parameterDrive>
         <price>42</price>
     </computerPart>
 
@@ -50,17 +50,27 @@
         <country>CHINA</country>
         <maker>HP</maker>
         <parametersMouse>
-        <typeMouse>optical</typeMouse>
+            <typeMouse>optical</typeMouse>
         </parametersMouse>
         <price>11</price>
     </computerPart>
 
     <computerPart id="006">
+        <name>Mouse</name>
+        <country>CHINA</country>
+        <maker>HP</maker>
+        <parametersMouse>
+            <typeMouse>laser</typeMouse>
+        </parametersMouse>
+        <price>11</price>
+    </computerPart>
+
+    <computerPart id="007">
         <name>Videocard</name>
         <country>MALAYSIA</country>
         <maker>Radeon_HD7990</maker>
         <parametersVideocard>
-            <extensionBoard>PCI_E</extensionBoard>
+            <extensionBoard>PCI-Ex</extensionBoard>
             <dataBus>256</dataBus>
             <versionShader>5.0</versionShader>
             <videoMemory>2</videoMemory>

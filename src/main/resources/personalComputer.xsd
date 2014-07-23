@@ -27,7 +27,7 @@
             <xsd:element name="name" type="xsd:string"/>
             <xsd:element name="country" type="countryType"/>
             <xsd:element name="maker" type="makerType"/>
-            <xsd:element name="parameters" type="cpuType" />
+            <xsd:element name="parametersCPU" type="cpuType" />
             <xsd:element name="parameterDrive" type="DriveType" />
             <xsd:element name="parameterKeybord" type="KeybordType" />
             <xsd:element name="parameterMonitor" type="MonitorType" />

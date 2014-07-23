@@ -47,14 +47,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DriveType }
-     * 
-     */
-    public DriveType createDriveType() {
-        return new DriveType();
-    }
-
-    /**
      * Create an instance of {@link CpuType }
      * 
      */
@@ -63,19 +55,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link KeybordType }
-     * 
-     */
-    public KeybordType createKeybordType() {
-        return new KeybordType();
-    }
-
-    /**
      * Create an instance of {@link MonitorType }
      * 
      */
     public MonitorType createMonitorType() {
         return new MonitorType();
+    }
+
+    /**
+     * Create an instance of {@link DriveType }
+     * 
+     */
+    public DriveType createDriveType() {
+        return new DriveType();
+    }
+
+    /**
+     * Create an instance of {@link KeybordType }
+     * 
+     */
+    public KeybordType createKeybordType() {
+        return new KeybordType();
     }
 
     /**

@@ -4,6 +4,7 @@ package entity;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -17,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="extensionBoard" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="extensionBoard" type="{http://www.example.com/personalComputer}extensionBoardVideoCardType"/>
  *         &lt;element name="dataBus" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="versionShader" type="{http://www.w3.org/2001/XMLSchema}float"/>
  *         &lt;element name="videoMemory" type="{http://www.w3.org/2001/XMLSchema}int"/>
@@ -39,7 +40,8 @@ import javax.xml.bind.annotation.XmlType;
 public class VideocardType {
 
     @XmlElement(required = true)
-    protected String extensionBoard;
+    @XmlSchemaType(name = "string")
+    protected ExtensionBoardVideoCardType extensionBoard;
     protected int dataBus;
     protected float versionShader;
     protected int videoMemory;
@@ -49,10 +51,10 @@ public class VideocardType {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link ExtensionBoardVideoCardType }
      *     
      */
-    public String getExtensionBoard() {
+    public ExtensionBoardVideoCardType getExtensionBoard() {
         return extensionBoard;
     }
 
@@ -61,10 +63,10 @@ public class VideocardType {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link ExtensionBoardVideoCardType }
      *     
      */
-    public void setExtensionBoard(String value) {
+    public void setExtensionBoard(ExtensionBoardVideoCardType value) {
         this.extensionBoard = value;
     }
 

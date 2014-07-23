@@ -4,6 +4,7 @@ package entity;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -17,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="typeMouse" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="typeMouse" type="{http://www.example.com/personalComputer}typeMouse"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -33,17 +34,18 @@ import javax.xml.bind.annotation.XmlType;
 public class MouseType {
 
     @XmlElement(required = true)
-    protected String typeMouse;
+    @XmlSchemaType(name = "string")
+    protected TypeMouse typeMouse;
 
     /**
      * Gets the value of the typeMouse property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link TypeMouse }
      *     
      */
-    public String getTypeMouse() {
+    public TypeMouse getTypeMouse() {
         return typeMouse;
     }
 
@@ -52,10 +54,10 @@ public class MouseType {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link TypeMouse }
      *     
      */
-    public void setTypeMouse(String value) {
+    public void setTypeMouse(TypeMouse value) {
         this.typeMouse = value;
     }
 
