@@ -23,13 +23,13 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="country" type="{http://www.example.com/personalComputer}countryType"/>
  *         &lt;element name="maker" type="{http://www.example.com/personalComputer}makerType"/>
- *         &lt;element name="parameters" type="{http://www.example.com/personalComputer}cpuType"/>
+ *         &lt;element name="parametersCPU" type="{http://www.example.com/personalComputer}cpuType"/>
+ *         &lt;element name="price" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="parameterDrive" type="{http://www.example.com/personalComputer}DriveType"/>
  *         &lt;element name="parameterKeybord" type="{http://www.example.com/personalComputer}KeybordType"/>
  *         &lt;element name="parameterMonitor" type="{http://www.example.com/personalComputer}MonitorType"/>
- *         &lt;element name="parametersVideocard" type="{http://www.example.com/personalComputer}VideocardType"/>
  *         &lt;element name="parametersMouse" type="{http://www.example.com/personalComputer}MouseType"/>
- *         &lt;element name="price" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="parametersVideocard" type="{http://www.example.com/personalComputer}VideocardType"/>
  *       &lt;/sequence>
  *       &lt;attribute name="id" use="required" type="{http://www.example.com/personalComputer}IdType" />
  *     &lt;/restriction>
@@ -44,13 +44,13 @@ import javax.xml.bind.annotation.XmlType;
     "name",
     "country",
     "maker",
-    "parameters",
+    "parametersCPU",
+    "price",
     "parameterDrive",
     "parameterKeybord",
     "parameterMonitor",
-    "parametersVideocard",
     "parametersMouse",
-    "price"
+    "parametersVideocard"
 })
 public class ComputerPartType {
 
@@ -63,7 +63,8 @@ public class ComputerPartType {
     @XmlSchemaType(name = "string")
     protected MakerType maker;
     @XmlElement(required = true)
-    protected CpuType parameters;
+    protected CpuType parametersCPU;
+    protected int price;
     @XmlElement(required = true)
     protected DriveType parameterDrive;
     @XmlElement(required = true)
@@ -71,10 +72,9 @@ public class ComputerPartType {
     @XmlElement(required = true)
     protected MonitorType parameterMonitor;
     @XmlElement(required = true)
-    protected VideocardType parametersVideocard;
-    @XmlElement(required = true)
     protected MouseType parametersMouse;
-    protected int price;
+    @XmlElement(required = true)
+    protected VideocardType parametersVideocard;
     @XmlAttribute(name = "id", required = true)
     protected BigInteger id;
 
@@ -151,27 +151,43 @@ public class ComputerPartType {
     }
 
     /**
-     * Gets the value of the parameters property.
+     * Gets the value of the parametersCPU property.
      * 
      * @return
      *     possible object is
      *     {@link CpuType }
      *     
      */
-    public CpuType getParameters() {
-        return parameters;
+    public CpuType getParametersCPU() {
+        return parametersCPU;
     }
 
     /**
-     * Sets the value of the parameters property.
+     * Sets the value of the parametersCPU property.
      * 
      * @param value
      *     allowed object is
      *     {@link CpuType }
      *     
      */
-    public void setParameters(CpuType value) {
-        this.parameters = value;
+    public void setParametersCPU(CpuType value) {
+        this.parametersCPU = value;
+    }
+
+    /**
+     * Gets the value of the price property.
+     * 
+     */
+    public int getPrice() {
+        return price;
+    }
+
+    /**
+     * Sets the value of the price property.
+     * 
+     */
+    public void setPrice(int value) {
+        this.price = value;
     }
 
     /**
@@ -247,30 +263,6 @@ public class ComputerPartType {
     }
 
     /**
-     * Gets the value of the parametersVideocard property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link VideocardType }
-     *     
-     */
-    public VideocardType getParametersVideocard() {
-        return parametersVideocard;
-    }
-
-    /**
-     * Sets the value of the parametersVideocard property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link VideocardType }
-     *     
-     */
-    public void setParametersVideocard(VideocardType value) {
-        this.parametersVideocard = value;
-    }
-
-    /**
      * Gets the value of the parametersMouse property.
      * 
      * @return
@@ -295,19 +287,27 @@ public class ComputerPartType {
     }
 
     /**
-     * Gets the value of the price property.
+     * Gets the value of the parametersVideocard property.
      * 
+     * @return
+     *     possible object is
+     *     {@link VideocardType }
+     *     
      */
-    public int getPrice() {
-        return price;
+    public VideocardType getParametersVideocard() {
+        return parametersVideocard;
     }
 
     /**
-     * Sets the value of the price property.
+     * Sets the value of the parametersVideocard property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link VideocardType }
+     *     
      */
-    public void setPrice(int value) {
-        this.price = value;
+    public void setParametersVideocard(VideocardType value) {
+        this.parametersVideocard = value;
     }
 
     /**

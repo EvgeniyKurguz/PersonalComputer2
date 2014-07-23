@@ -24,12 +24,7 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _DataBus_QNAME = new QName("http://www.example.com/personalComputer", "dataBus");
-    private final static QName _VersionShader_QNAME = new QName("http://www.example.com/personalComputer", "versionShader");
     private final static QName _PersonalComputer_QNAME = new QName("http://www.example.com/personalComputer", "personalComputer");
-    private final static QName _VideoMemory_QNAME = new QName("http://www.example.com/personalComputer", "videoMemory");
-    private final static QName _ExtensionBoard_QNAME = new QName("http://www.example.com/personalComputer", "extensionBoard");
-    private final static QName _TypeMouse_QNAME = new QName("http://www.example.com/personalComputer", "typeMouse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: entity
@@ -103,57 +98,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.example.com/personalComputer", name = "dataBus")
-    public JAXBElement<Integer> createDataBus(Integer value) {
-        return new JAXBElement<Integer>(_DataBus_QNAME, Integer.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Float }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.example.com/personalComputer", name = "versionShader")
-    public JAXBElement<Float> createVersionShader(Float value) {
-        return new JAXBElement<Float>(_VersionShader_QNAME, Float.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ComputerPartList }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://www.example.com/personalComputer", name = "personalComputer")
     public JAXBElement<ComputerPartList> createPersonalComputer(ComputerPartList value) {
         return new JAXBElement<ComputerPartList>(_PersonalComputer_QNAME, ComputerPartList.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.example.com/personalComputer", name = "videoMemory")
-    public JAXBElement<Integer> createVideoMemory(Integer value) {
-        return new JAXBElement<Integer>(_VideoMemory_QNAME, Integer.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.example.com/personalComputer", name = "extensionBoard")
-    public JAXBElement<String> createExtensionBoard(String value) {
-        return new JAXBElement<String>(_ExtensionBoard_QNAME, String.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.example.com/personalComputer", name = "typeMouse")
-    public JAXBElement<String> createTypeMouse(String value) {
-        return new JAXBElement<String>(_TypeMouse_QNAME, String.class, null, value);
     }
 
 }

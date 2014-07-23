@@ -18,7 +18,6 @@
     <xsd:complexType name="computerPartList">
         <xsd:sequence>
             <xsd:element name="computerPart" type="computerPartType" minOccurs="1" maxOccurs="unbounded"/>
-
         </xsd:sequence>
     </xsd:complexType>
 
@@ -27,24 +26,15 @@
             <xsd:element name="name" type="xsd:string"/>
             <xsd:element name="country" type="countryType"/>
             <xsd:element name="maker" type="makerType"/>
-            <xsd:element name="parameters" type="cpuType" />
-            <xsd:element name="parameterDrive" type="DriveType" />
-            <xsd:element name="parameterKeybord" type="KeybordType" />
-            <xsd:element name="parameterMonitor" type="MonitorType" />
-            <xsd:element name="parametersVideocard" type="VideocardType" />
-            <xsd:element name="parametersMouse" type="MouseType" />
+            <xsd:element name="parametersCPU" type="cpuType"/>
             <xsd:element name="price" type="xsd:int"/>
+            <xsd:element name="parameterDrive" type="DriveType"/>
+            <xsd:element name="parameterKeybord" type="KeybordType"/>
+            <xsd:element name="parameterMonitor" type="MonitorType"/>
+            <xsd:element name="parametersMouse" type="MouseType"/>
+            <xsd:element name="parametersVideocard" type="VideocardType"/>
         </xsd:sequence>
         <xsd:attribute name="id" type="IdType" use="required"/>
     </xsd:complexType>
-
-
-
-    <xsd:element name="typeMouse" type="xsd:string"/>
-
-    <xsd:element name="extensionBoard" type="xsd:string"/>
-    <xsd:element name="dataBus" type="xsd:int"/>
-    <xsd:element name="versionShader" type="xsd:float"/>
-    <xsd:element name="videoMemory" type="xsd:int"/>
 
 </xsd:schema>
