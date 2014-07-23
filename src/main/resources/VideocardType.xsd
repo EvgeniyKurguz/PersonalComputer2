@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:complexType name="VideocardType" >
+        <xsd:sequence>
+            <xsd:element name="extensionBoard" type="xsd:string"/>
+            <xsd:element name="dataBus" type="xsd:int"/>
+            <xsd:element name="versionShader" type="xsd:float"/>
+            <xsd:element name="videoMemory" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

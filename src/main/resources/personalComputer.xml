@@ -21,7 +21,7 @@
         <maker>Samsung</maker>
         <parameterDrive>
             <interfaces>SATA_II</interfaces>
-        </parameterDrive>
+         </parameterDrive>
         <price>42</price>
     </computerPart>
 
@@ -39,9 +39,9 @@
         <name>Monitor</name>
         <country>MALAYSIA</country>
         <maker>BENQ</maker>
-        <parameters>
+        <parameterMonitor>
             <sizeScreen>17</sizeScreen>
-        </parameters>
+        </parameterMonitor>
         <price>300</price>
     </computerPart>
 
@@ -49,9 +49,9 @@
         <name>Mouse</name>
         <country>CHINA</country>
         <maker>HP</maker>
-        <parameters>
+        <parametersMouse>
         <typeMouse>optical</typeMouse>
-        </parameters>
+        </parametersMouse>
         <price>11</price>
     </computerPart>
 
@@ -59,12 +59,12 @@
         <name>Videocard</name>
         <country>MALAYSIA</country>
         <maker>Radeon_HD7990</maker>
-        <parameters>
+        <parametersVideocard>
             <extensionBoard>PCI_E</extensionBoard>
             <dataBus>256</dataBus>
             <versionShader>5.0</versionShader>
             <videoMemory>2</videoMemory>
-        </parameters>
+        </parametersVideocard>
         <price>342</price>
     </computerPart>
 
