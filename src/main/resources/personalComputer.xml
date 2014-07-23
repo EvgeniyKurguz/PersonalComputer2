@@ -19,9 +19,9 @@
         <name>Drive</name>
         <country>CHINA</country>
         <maker>Samsung</maker>
-        <parameters>
+        <parameterDrive>
             <interfaces>SATA_II</interfaces>
-        </parameters>
+        </parameterDrive>
         <price>42</price>
     </computerPart>
 
@@ -29,9 +29,9 @@
         <name>Keybord</name>
         <country>TAIBAI</country>
         <maker>Hi tech</maker>
-        <parameters>
+        <parameterKeybord>
             <type>WIRElESS</type>
-        </parameters>
+        </parameterKeybord>
         <price>12</price>
     </computerPart>
 

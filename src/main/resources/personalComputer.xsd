@@ -8,6 +8,7 @@
     <xsd:include schemaLocation="makerType.xsd"/>
     <xsd:include schemaLocation="cpuType.xsd"/>
     <xsd:include schemaLocation="DriveType.xsd"/>
+    <xsd:include schemaLocation="KeybordType.xsd"/>
 
 
     <xsd:element name="personalComputer" type="computerPartList"/>
@@ -25,15 +26,15 @@
             <xsd:element name="country" type="countryType"/>
             <xsd:element name="maker" type="makerType"/>
             <xsd:element name="parameters" type="cpuType" />
-
-            <xsd:element name="interfaces" type="DriveType"  />
+            <xsd:element name="parameterDrive" type="DriveType" />
+            <xsd:element name="parameterKeybord" type="KeybordType" />
             <xsd:element name="price" type="xsd:int"/>
         </xsd:sequence>
         <xsd:attribute name="id" type="IdType" use="required"/>
     </xsd:complexType>
 
 
-    <xsd:element name="type" type="xsd:string"/>
+
     <xsd:element name="typeMouse" type="xsd:string"/>
     <xsd:element name="sizeScreen" type="xsd:string"/>
     <xsd:element name="extensionBoard" type="xsd:string"/>
