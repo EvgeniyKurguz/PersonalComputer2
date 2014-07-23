@@ -2,11 +2,12 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <xsd:simpleType name="makerType">
         <xsd:restriction base="xsd:string">
-            <xsd:enumeration value=""/>
-            <xsd:enumeration value=""/>
-            <xsd:enumeration value=""/>
-            <xsd:enumeration value=""/>
-            <xsd:enumeration value=""/>
+            <xsd:enumeration value="AMD_FX8200"/>
+            <xsd:enumeration value="Samsung"/>
+            <xsd:enumeration value="Hi tech"/>
+            <xsd:enumeration value="BENQ"/>
+            <xsd:enumeration value="HP"/>
+            <xsd:enumeration value="Radeon_HD7990"/>
         </xsd:restriction>
     </xsd:simpleType>
 </xsd:schema>

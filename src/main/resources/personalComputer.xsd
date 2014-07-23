@@ -6,12 +6,16 @@
     <xsd:include schemaLocation="IdType.xsd"/>
     <xsd:include schemaLocation="countryType.xsd"/>
     <xsd:include schemaLocation="makerType.xsd"/>
+    <xsd:include schemaLocation="cpuType.xsd"/>
+    <xsd:include schemaLocation="DriveType.xsd"/>
 
-    <xsd:element name="computerPart" type="computerPartList"/>
+
+    <xsd:element name="personalComputer" type="computerPartList"/>
 
     <xsd:complexType name="computerPartList">
         <xsd:sequence>
             <xsd:element name="computerPart" type="computerPartType" minOccurs="1" maxOccurs="unbounded"/>
+
         </xsd:sequence>
     </xsd:complexType>
 
@@ -20,18 +24,21 @@
             <xsd:element name="name" type="xsd:string"/>
             <xsd:element name="country" type="countryType"/>
             <xsd:element name="maker" type="makerType"/>
-            <xsd:element name="parameters" type="parametersType"/>
+            <xsd:element name="parameters" type="cpuType" />
+
+            <xsd:element name="interfaces" type="DriveType"  />
             <xsd:element name="price" type="xsd:int"/>
         </xsd:sequence>
         <xsd:attribute name="id" type="IdType" use="required"/>
     </xsd:complexType>
 
-    <xsd:complexType name="parametersType">
-        <xsd:sequence>
-            <xsd:element name="quntityCore" type="xsd:int"/>
-            <xsd:element name="frequency" type="xsd:int"/>
-            <xsd:element name="cacheMemory" type="xsd:int"/>
-        </xsd:sequence>
-    </xsd:complexType>
+
+    <xsd:element name="type" type="xsd:string"/>
+    <xsd:element name="typeMouse" type="xsd:string"/>
+    <xsd:element name="sizeScreen" type="xsd:string"/>
+    <xsd:element name="extensionBoard" type="xsd:string"/>
+    <xsd:element name="dataBus" type="xsd:int"/>
+    <xsd:element name="versionShader" type="xsd:float"/>
+    <xsd:element name="videoMemory" type="xsd:int"/>
 
 </xsd:schema>

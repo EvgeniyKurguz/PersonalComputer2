@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <st:personalComputer xmlns:st="http://www.example.com/personalComputer"
                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                     xsi:schemaLocation="http://www.example.com/personalComputer.xsd">
+                     xsi:schemaLocation="http://www.example.com/personalComputer personalComputer.xsd">
+
     <computerPart id="001">
         <name>CPU</name>
-        <contry>China</contry>
-        <maker>AMD FX8200</maker>
+        <country>CHINA</country>
+        <maker>AMD_FX8200</maker>
         <parameters>
             <quntityCore>8</quntityCore>
             <frequency>4.2</frequency>
@@ -16,23 +17,27 @@
 
     <computerPart id="002">
         <name>Drive</name>
-        <contry>China</contry>
+        <country>CHINA</country>
         <maker>Samsung</maker>
-        <interfaces>SATA II</interfaces>
+        <parameters>
+            <interfaces>SATA_II</interfaces>
+        </parameters>
         <price>42</price>
     </computerPart>
 
     <computerPart id="003">
         <name>Keybord</name>
-        <contry>Taibai</contry>
+        <country>TAIBAI</country>
         <maker>Hi tech</maker>
-        <type>WIRElESS</type>
+        <parameters>
+            <type>WIRElESS</type>
+        </parameters>
         <price>12</price>
     </computerPart>
 
     <computerPart id="004">
         <name>Monitor</name>
-        <contry>Malaysia</contry>
+        <country>MALAYSIA</country>
         <maker>BENQ</maker>
         <parameters>
             <sizeScreen>17</sizeScreen>
@@ -42,15 +47,17 @@
 
     <computerPart id="005">
         <name>Mouse</name>
-        <contry>China</contry>
+        <country>CHINA</country>
         <maker>HP</maker>
+        <parameters>
         <typeMouse>optical</typeMouse>
+        </parameters>
         <price>11</price>
     </computerPart>
 
     <computerPart id="006">
         <name>Videocard</name>
-        <contry>Malaysia</contry>
+        <country>MALAYSIA</country>
         <maker>Radeon_HD7990</maker>
         <parameters>
             <extensionBoard>PCI_E</extensionBoard>
