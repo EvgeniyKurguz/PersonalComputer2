@@ -22,20 +22,19 @@
     </xsd:complexType>
 
     <xsd:complexType name="computerPartType">
-        <xsd:sequence>
+        <xsd:all>
             <xsd:element name="name" type="xsd:string"/>
             <xsd:element name="country" type="countryType"/>
             <xsd:element name="maker" type="makerType"/>
-            <xsd:element name="parametersCPU" type="cpuType"/>
-            <xsd:element name="price" type="xsd:int"/>
-            <xsd:element name="parameterDrive" type="DriveType"/>
-            <xsd:element name="parameterKeybord" type="KeybordType"/>
-            <xsd:element name="parameterMonitor" type="MonitorType"/>
-            <xsd:element name="parametersMouse" type="MouseType"/>
-            <xsd:element name="parametersVideocard" type="VideocardType"/>
-        </xsd:sequence>
+            <xsd:element name="parametersCPU" type="cpuType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="price" type="xsd:decimal"/>
+            <xsd:element name="parameterDrive" type="DriveType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="parameterKeybord" type="KeybordType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="parameterMonitor" type="MonitorType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="parametersMouse" type="MouseType" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="parametersVideocard" type="VideocardType" minOccurs="0" maxOccurs="1"/>
+        </xsd:all>
         <xsd:attribute name="id" type="IdType" use="required"/>
     </xsd:complexType>
-
 
 </xsd:schema>

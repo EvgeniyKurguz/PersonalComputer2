@@ -2,15 +2,14 @@ package parser;
 
 import entity.ComputerPartList;
 import jdk.internal.org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.jar.Attributes;
 
-/**
- * Created by Евгений on 23.07.2014.
- */
-public class SAXHandler {
+
+public class SAXHandler extends DefaultHandler {
     private static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger(SAXHandler.class);
     private List<ComputerPartList> computerPartLists = null;
     private ComputerPartList computerPartList = null;

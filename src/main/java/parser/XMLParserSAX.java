@@ -7,9 +7,7 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.util.List;
 
-/**
- * Created by Евгений on 23.07.2014.
- */
+
 public class XMLParserSAX implements ParserFactory {
     private static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger(XMLParserSAX.class);
     SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
