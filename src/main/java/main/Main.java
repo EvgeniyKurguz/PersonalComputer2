@@ -11,7 +11,7 @@ import java.io.IOException;
 public class Main  {
     private static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger(Main.class);
 
-    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
+    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, org.xml.sax.SAXException {
         LOGGER.info("----------------SAX---------------");
         ParserFactory saxParser = new XMLParserSAX();
         saxParser.getData();
