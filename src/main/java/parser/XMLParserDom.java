@@ -2,6 +2,8 @@ package parser;
 
 
 import com.epam.task1.entity.ComputerPart;
+import entity.ComputerPartList;
+import entity.CpuType;
 import jdk.internal.org.xml.sax.SAXException;
 import org.omg.CORBA.portable.InputStream;
 import org.w3c.dom.Document;
@@ -15,40 +17,35 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-public class XMLParserDom implements ParserFactory {
+public class XMLParserDom  {
 
-public static final String TAG_TARIFF = "tariff";
+public static final String TAG_COMPUTERPART = "ComputerPart";
 public static final String TAG_NAME = "name";
-public static final String TAG_OP_NAME = "operatorName";
-public static final String TAG_PAYROLL = "payroll";
-public static final String TAG_CALL_PRICES = "callPrices";
-public static final String TAG_SMS_PRICE = "smsPrice";
-public static final String TAG_PARAMETERS = "parameters";
-public static final String TAG_INNER_PRICE = "innerPrice";
-public static final String TAG_OUTER_PRICE = "outerPrice";
-public static final String TAG_FIXED_LOCATION = "fixedLocation";
-public static final String TAG_FAVORITE_NUMBERS = "favoriteNumbers";
-public static final String TAG_TARIFFING = "tariffing";
-public static final String TAG_CONNECTION_FEE = "connectionFee";
+public static final String TAG_QUENTITYCORE = "quntityCore";
+public static final String TAG_FREQUENCY = "frequency";
+public static final String TAG_CACHEMEMORY = "cacheMemory";
+public static final String TAG_COUNTRYTYPE = "CountryType";
+public static final String TAG_MAKERTYPE = "MakerType";
 
-private static List<ComputerPart> computerParts;
 
-public static void parse(InputStream xml, List<ComputerPart> list) throws ParserConfigurationException, IOException, SAXException, org.xml.sax.SAXException {
+private static List<CpuType> cpuTypes;
+
+public static void parse(InputStream xml, List<CpuType> list) throws ParserConfigurationException, IOException, SAXException, org.xml.sax.SAXException {
         Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(xml);
-    computerParts = list;
+            cpuTypes = list;
         parseNode((Element) doc.getDocumentElement());
         }
 
 private static void parseNode(Element element) {
-        NodeList nodeList = element.getElementsByTagName(TAG_TARIFF);
-    ComputerPart tariff;
+        NodeList nodeList = element.getElementsByTagName(TAG_COMPUTERPART);
+    CpuType cpuType;
         for (int i = 0; i < nodeList.getLength(); i++) {
-        tariff = new ComputerPart();
+            cpuType = new CpuType();
         Element el = (Element) nodeList.item(i);
-        tariff.setName(getChildValue(el, TAG_NAME));
-        tariff.setOperatorName(getChildValue(el, TAG_OP_NAME));
-        tariff.setPayroll(new BigDecimal(getChildValue(el, TAG_PAYROLL)));
-        tariff.setSmsPrice(new BigDecimal(getChildValue(el, TAG_SMS_PRICE)));
+            computerPart.setId(getChildValue(el, TAG_NAME));
+            computerPart.setOperatorName(getChildValue(el, TAG_OP_NAME));
+            computerPart.setPayroll(new BigDecimal(getChildValue(el, TAG_PAYROLL)));
+            computerPart.setSmsPrice(new BigDecimal(getChildValue(el, TAG_SMS_PRICE)));
 
         CallPrices callPrices = new CallPrices();
         Element tmp = getChild(el, TAG_CALL_PRICES);
