@@ -22,16 +22,16 @@ public class SAXHandler extends DefaultHandler {
     }
 
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-        if (qName.equalsIgnoreCase("instruments")) {
+        if (qName.equalsIgnoreCase("computerPartLists")) {
             computerPartLists = new LinkedList<ComputerPartList>();
             LOGGER.info("Start element: {}", "instruments");
         }
     }
 
     public void endElement(String uri, String localName, String qName) {
-        if (qName.equalsIgnoreCase("instruments")) {
+        if (qName.equalsIgnoreCase("computerPartLists")) {
             computerPartLists.add(computerPartList);
-            LOGGER.info("End element: {}", "instruments");
+            LOGGER.info("End element: {}", "computerPartLists");
         }
     }
 

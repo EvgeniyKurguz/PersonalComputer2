@@ -6,71 +6,60 @@ import entity.ComputerPartList;
 import entity.CpuType;
 import jdk.internal.org.xml.sax.SAXException;
 import org.omg.CORBA.portable.InputStream;
-import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import javax.lang.model.element.Element;
+
+import java.io.File;
+import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
-
-public class XMLParserDom  {
-
-public static final String TAG_COMPUTERPART = "ComputerPart";
-public static final String TAG_NAME = "name";
-public static final String TAG_QUENTITYCORE = "quntityCore";
-public static final String TAG_FREQUENCY = "frequency";
-public static final String TAG_CACHEMEMORY = "cacheMemory";
-public static final String TAG_COUNTRYTYPE = "CountryType";
-public static final String TAG_MAKERTYPE = "MakerType";
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 
-private static List<CpuType> cpuTypes;
+public class XMLParserDom implements ParserFactory {
+    private static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger(XMLParserDom.class);
+    public static final String ID = "id";
+    public static final String TAG_COMPUTERPART = "ComputerPart";
+    public static final String TAG_NAME = "name";
+    public static final String COUNTRY = "country";
+    public static final String MAKER = "maker";
+    public static final String TAG_QUENTITYCORE = "quntityCore";
+    public static final String TAG_FREQUENCY = "frequency";
+    public static final String TAG_CACHEMEMORY = "cacheMemory";
+    public static final String PRICE = "price";
 
-public static void parse(InputStream xml, List<CpuType> list) throws ParserConfigurationException, IOException, SAXException, org.xml.sax.SAXException {
-        Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(xml);
-            cpuTypes = list;
-        parseNode((Element) doc.getDocumentElement());
+    public void getData() throws ParserConfigurationException, IOException, org.xml.sax.SAXException {
+        try {
+            File xmlFile = new File("src/main/resources/personalComputer.xml");
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(xmlFile);
+            doc.getDocumentElement().normalize();
+            LOGGER.info("Root element: {}", doc.getDocumentElement().getNodeName());
+            NodeList nList = doc.getElementsByTagName(TAG_COMPUTERPART);
+            System.out.println("----------------------");
+
+            for (int temp = 0; temp < nList.getLength(); temp++) {
+                Node nNode = nList.item(temp);
+                LOGGER.info("Current Element: {}", nNode.getNodeName());
+                if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element eElement = (Element) nNode;
+                    LOGGER.info(" id: {}", eElement.getAttribute(ID));
+                    LOGGER.info("TAG_NAME: {}", eElement.getElementsByTagName(TAG_NAME).item(0).getTextContent());
+                    LOGGER.info("quntityCore: {}", eElement.getElementsByTagName(TAG_QUENTITYCORE).item(0).getTextContent());
+                    LOGGER.info("price: {}", eElement.getElementsByTagName(PRICE).item(0).getTextContent());
+                    LOGGER.info("country: {}", eElement.getElementsByTagName(COUNTRY).item(0).getTextContent());
+                    LOGGER.info("maker: {}", eElement.getElementsByTagName(MAKER).item(0).getTextContent());
+                    LOGGER.info("frequency: {}", eElement.getElementsByTagName(TAG_FREQUENCY).item(0).getTextContent());
+                    LOGGER.info("cacheMemory: {}", eElement.getElementsByTagName(TAG_CACHEMEMORY).item(0).getTextContent());
+
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
-private static void parseNode(Element element) {
-        NodeList nodeList = element.getElementsByTagName(TAG_COMPUTERPART);
-    CpuType cpuType;
-        for (int i = 0; i < nodeList.getLength(); i++) {
-            cpuType = new CpuType();
-        Element el = (Element) nodeList.item(i);
-            computerPart.setId(getChildValue(el, TAG_NAME));
-            computerPart.setOperatorName(getChildValue(el, TAG_OP_NAME));
-            computerPart.setPayroll(new BigDecimal(getChildValue(el, TAG_PAYROLL)));
-            computerPart.setSmsPrice(new BigDecimal(getChildValue(el, TAG_SMS_PRICE)));
-
-        CallPrices callPrices = new CallPrices();
-        Element tmp = getChild(el, TAG_CALL_PRICES);
-        callPrices.setInnerPrice(new BigDecimal(getChildValue(tmp, TAG_INNER_PRICE)));
-        callPrices.setOuterPrice(new BigDecimal(getChildValue(tmp, TAG_OUTER_PRICE)));
-        callPrices.setFixedLocation(new BigDecimal(getChildValue(tmp, TAG_FIXED_LOCATION)));
-        tariff.setCallPrices(callPrices);
-
-        Parameters parameters = new Parameters();
-        tmp = getChild(el, TAG_PARAMETERS);
-        parameters.setFavoriteNumbers(new Boolean(getChildValue((Element) tmp, TAG_FAVORITE_NUMBERS)));
-        parameters.setTarriffing(getChildValue(tmp, TAG_TARIFFING));
-        parameters.setConnectionFee(new BigDecimal(getChildValue(tmp, TAG_CONNECTION_FEE)));
-        tariff.setParameters(parameters);
-
-        tariffs.add(tariff);
-        }
-        }
-
-private static String getChildValue(Element element, String childName) {
-        Node child = getChild(element, childName);
-        return child == null ? "0" : child.getFirstChild().getNodeValue();
-        }
-
-private static Element getChild(Element parent, String childName) {
-        return (Element) parent.getElementsByTagName(childName).item(0);
-        }
-        }
+    }
+}
