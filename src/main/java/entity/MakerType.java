@@ -29,6 +29,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum MakerType {
 
+
     @XmlEnumValue("AMD_FX8200")
     AMD_FX_8200("AMD_FX8200"),
     @XmlEnumValue("Samsung")
