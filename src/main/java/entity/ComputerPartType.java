@@ -63,7 +63,7 @@ public class ComputerPartType {
     @XmlSchemaType(name = "string")
     protected MakerType maker;
     @XmlElement(required = true)
-    protected CpuType parametersCPU;
+    protected String parametersCPU;
     protected int price;
     @XmlElement(required = true)
     protected DriveType parameterDrive;
@@ -74,9 +74,9 @@ public class ComputerPartType {
     @XmlElement(required = true)
     protected MouseType parametersMouse;
     @XmlElement(required = true)
-    protected VideocardType parametersVideocard;
+    protected String parametersVideocard;
     @XmlAttribute(name = "id", required = true)
-    protected BigInteger id;
+    protected Integer id;
 
     /**
      * Gets the value of the name property.
@@ -158,19 +158,19 @@ public class ComputerPartType {
      *     {@link CpuType }
      *     
      */
-    public CpuType getParametersCPU() {
+    public String getParametersCPU() {
         return parametersCPU;
     }
 
     /**
      * Sets the value of the parametersCPU property.
-     * 
+     *
      * @param value
      *     allowed object is
-     *     {@link CpuType }
+     *     {@link entity.CpuType }
      *     
      */
-    public void setParametersCPU(CpuType value) {
+    public void setParametersCPU(String value) {
         this.parametersCPU = value;
     }
 
@@ -294,7 +294,7 @@ public class ComputerPartType {
      *     {@link VideocardType }
      *     
      */
-    public VideocardType getParametersVideocard() {
+    public String getParametersVideocard() {
         return parametersVideocard;
     }
 
@@ -318,19 +318,19 @@ public class ComputerPartType {
      *     {@link BigInteger }
      *     
      */
-    public BigInteger getId() {
+    public Integer getId() {
         return id;
     }
 
     /**
      * Sets the value of the id property.
-     * 
+     *
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link java.math.BigInteger }
      *     
      */
-    public void setId(BigInteger value) {
+    public void setId(Integer value) {
         this.id = value;
     }
 

@@ -1,8 +1,5 @@
 package parser;
 
-
-
-import entity.ComputerPartList;
 import entity.ComputerPartType;
 import entity.CountryType;
 import entity.MakerType;
@@ -14,8 +11,7 @@ import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import java.io.IOException;
-import java.math.BigDecimal;
-import java.math.BigInteger;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,7 +49,7 @@ public class XMLParserStax implements ParserFactory {
                         if (TAG_COMPUTERPART.equals(qName)) {
                             computerPartList = new ComputerPartType();
                         } else if (COUNTRY.equals(qName)) {
-                            makerType = new MakerType();
+                            // makerType = new MakerType();
 
                         }
                         break;
@@ -83,7 +79,7 @@ public class XMLParserStax implements ParserFactory {
                         } else if (TAG_CACHEMEMORY.equalsIgnoreCase(qName)) {
                             computerPartList.setParametersCPU(temp);
 
-                                              }
+                        }
                         break;
 
                     case XMLStreamConstants.START_DOCUMENT:
@@ -91,7 +87,7 @@ public class XMLParserStax implements ParserFactory {
                         break;
                 }
             }
-           computerPartLists.forEach(System.out::println);
+            computerPartLists.forEach(System.out::println);
         } catch (XMLStreamException e) {
             e.printStackTrace();
         }
