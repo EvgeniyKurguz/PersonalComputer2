@@ -4,6 +4,7 @@ import jdk.internal.org.xml.sax.SAXException;
 import parser.ParserFactory;
 import parser.XMLParserDom;
 import parser.XMLParserSAX;
+import parser.XMLParserStax;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
@@ -20,5 +21,9 @@ public class Main  {
         LOGGER.info("----------------DOM---------------");
         ParserFactory domParser = new XMLParserDom();
         domParser.getData();
+
+        LOGGER.info("----------------StAX---------------");
+        ParserFactory staxParser = new XMLParserStax();
+        staxParser.getData();
     }
 }

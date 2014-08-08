@@ -42,7 +42,7 @@ public class XMLParserStax implements ParserFactory {
         try {
             XMLInputFactory factory = XMLInputFactory.newInstance();
             XMLStreamReader reader = null;
-            reader = factory.createXMLStreamReader(ClassLoader.getSystemResourceAsStream("src/main/resources/xml/Instruments.xml"));
+            reader = factory.createXMLStreamReader(ClassLoader.getSystemResourceAsStream("src/main/resources/personalComputer.xml"));
             while (reader.hasNext()) {
                 int event = reader.next();
 
