@@ -3,6 +3,7 @@ package parser;
 
 
 import entity.ComputerPartList;
+import entity.ComputerPartType;
 import entity.CountryType;
 import entity.MakerType;
 import org.xml.sax.SAXException;
@@ -33,8 +34,8 @@ public class XMLParserStax implements ParserFactory {
 
     @Override
     public void getData() throws ParserConfigurationException, IOException, SAXException {
-        List<ComputerPartList> computerPartLists = null;
-        ComputerPartList computerPartList = null;
+        List<ComputerPartType> computerPartLists = null;
+        ComputerPartType computerPartList = null;
         CountryType countryType = null;
         MakerType makerType = null;
         String qName;
@@ -50,7 +51,7 @@ public class XMLParserStax implements ParserFactory {
                     case XMLStreamConstants.START_ELEMENT:
                         qName = reader.getLocalName();
                         if (TAG_COMPUTERPART.equals(qName)) {
-                            computerPartList = new ComputerPartList();
+                            computerPartList = new ComputerPartType();
                         } else if (COUNTRY.equals(qName)) {
                             makerType = new MakerType();
 
@@ -68,30 +69,29 @@ public class XMLParserStax implements ParserFactory {
                         } else if (ID.equalsIgnoreCase(qName)) {
                             computerPartList.setId(new Integer(temp));
                         } else if (TAG_NAME.equalsIgnoreCase(qName)) {
-                            computerPartList.setInstrumentName(temp);
+                            computerPartList.setName(temp);
                         } else if (MAKER.equalsIgnoreCase(qName)) {
-                            makerType.setMaterial(MakerType.valueOf(temp));
+                            computerPartList.setMaker(MakerType.valueOf(temp));
                         } else if (COUNTRY.equalsIgnoreCase(qName)) {
-                            countryType.setMaterial(MakerType.valueOf(temp));
+                            computerPartList.setCountry(CountryType.valueOf(temp));
                         } else if (TAG_QUENTITYCORE.equalsIgnoreCase(qName)) {
-                            computerPartList.setMoney(priceType);
+                            computerPartList.setParametersVideocard(qName);
                         } else if (PRICE.equalsIgnoreCase(qName)) {
-                            computerPartList.setPrice(new BigDecimal(temp));
+                            computerPartList.setPrice(new Integer(temp));
                         } else if (TAG_FREQUENCY.equalsIgnoreCase(qName)) {
-                            computerPartList.setCurrency(temp);
+                            computerPartList.setParametersCPU(temp);
                         } else if (TAG_CACHEMEMORY.equalsIgnoreCase(qName)) {
-                            computerPartList.setBrand(BrandType.valueOf(temp));
-                        } else if (PRICE.equalsIgnoreCase(qName)) {
-                            computerPartList.setType(temp);
+                            computerPartList.setParametersCPU(temp);
+
                                               }
                         break;
 
                     case XMLStreamConstants.START_DOCUMENT:
-                        computerPartLists = new ArrayList<ComputerPartList>();
+                        computerPartLists = new ArrayList<ComputerPartType>();
                         break;
                 }
             }
-            // instruments.forEach(System.out.println);
+           computerPartLists.forEach(System.out::println);
         } catch (XMLStreamException e) {
             e.printStackTrace();
         }

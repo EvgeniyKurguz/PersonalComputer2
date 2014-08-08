@@ -300,13 +300,13 @@ public class ComputerPartType {
 
     /**
      * Sets the value of the parametersVideocard property.
-     * 
+     *
      * @param value
      *     allowed object is
-     *     {@link VideocardType }
+     *     {@link entity.VideocardType }
      *     
      */
-    public void setParametersVideocard(VideocardType value) {
+    public void setParametersVideocard(String value) {
         this.parametersVideocard = value;
     }
 
