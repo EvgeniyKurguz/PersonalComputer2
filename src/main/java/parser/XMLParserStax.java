@@ -82,16 +82,16 @@ public class XMLParserStax implements ParserFactory {
                         }
                         break;
 
-                    case XMLStreamConstants.START_DOCUMENT:
-                        computerPartLists = new ArrayList<ComputerPartType>();
-                        break;
                 }
             }
-            computerPartLists.forEach(System.out::println);
+            for (ComputerPartType comp : computerPartLists) {
+                LOGGER.info(String.valueOf(comp));
+            }
         } catch (XMLStreamException e) {
             e.printStackTrace();
         }
     }
 }
+
 
 
