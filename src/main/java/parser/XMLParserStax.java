@@ -30,10 +30,9 @@ public class XMLParserStax implements ParserFactory {
 
     @Override
     public void getData() throws ParserConfigurationException, IOException, SAXException {
-        List<ComputerPartType> computerPartLists = null;
-        ComputerPartType computerPartList = null;
-        CountryType countryType = null;
-        MakerType makerType = null;
+         List<ComputerPartType> computerPartLists = null;
+         ComputerPartType computerPartList = null;
+       
         String qName;
         String temp = "";
         try {

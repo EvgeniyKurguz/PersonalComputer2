@@ -1,6 +1,7 @@
 package parser;
 
 import entity.ComputerPartList;
+import entity.ComputerPartType;
 import jdk.internal.org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
@@ -11,19 +12,29 @@ import java.util.jar.Attributes;
 
 public class SAXHandler extends DefaultHandler {
     private static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger(SAXHandler.class);
-    private List<ComputerPartList> computerPartLists = null;
-    private ComputerPartList computerPartList = null;
+    private List<ComputerPartType> computerPartLists = null;
+    private ComputerPartType computerPartList = null;
 
-    public List<ComputerPartList> getComputerPartLists() {
+    public List<ComputerPartType> getComputerPartLists() {
         if (computerPartLists == null) {
-            computerPartLists = new LinkedList<ComputerPartList>();
+            computerPartLists = new LinkedList<ComputerPartType>();
         }
         return this.computerPartLists;
     }
+    @Override
+    public void startDocument() throws org.xml.sax.SAXException {
+        System.out.println("start parsing...");
+    }
+
+    @Override
+    public void endDocument() throws org.xml.sax.SAXException {
+        System.out.println("end parsing...");
+    }
+
 
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         if (qName.equalsIgnoreCase("computerPartLists")) {
-            computerPartLists = new LinkedList<ComputerPartList>();
+            computerPartLists = new LinkedList<ComputerPartType>();
             LOGGER.info("Start element: {}", "instruments");
         }
     }

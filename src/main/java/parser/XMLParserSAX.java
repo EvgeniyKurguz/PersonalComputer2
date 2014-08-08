@@ -1,6 +1,7 @@
 package parser;
 
 import entity.ComputerPartList;
+import entity.ComputerPartType;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -18,9 +19,9 @@ public class XMLParserSAX implements ParserFactory {
             SAXParser saxParser = saxParserFactory.newSAXParser();
             SAXHandler saxHandler = new SAXHandler();
             saxParser.parse(new File("src/main/resources/personalComputer.xml"), saxHandler);
-            List<ComputerPartList> instrumentLists = saxHandler.getComputerPartLists();
-            for (ComputerPartList instrumentList : instrumentLists)
-                LOGGER.info("toString: {}", instrumentList.toString());
+            List<ComputerPartType> computerPartLists = saxHandler.getComputerPartLists();
+            for (ComputerPartType computerPartList : computerPartLists)
+                LOGGER.info("toString: {}", computerPartList.toString());
         } catch (Exception e) {
             LOGGER.info("exception: {}", e.getMessage());
         }
